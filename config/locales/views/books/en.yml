@@ -1,0 +1,17 @@
+en:
+  books:
+    index:
+      books: books
+      show_this_book: Show this book
+      new_book: New book
+    edit:
+      editing_book: Editing book
+      show_this_book: Show this book
+      back_to_books: Back to books
+    show:
+      edit_this_book: Edit this book
+      back_to_books: Back to books
+      destroy_this_book: Destroy this book
+    new:
+      new_book: New book
+      back_to_books: Back to books

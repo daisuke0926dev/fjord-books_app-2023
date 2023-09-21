@@ -1,7 +1,7 @@
 en:
   books:
     index:
-      books: books
+      books: Books
       show_this_book: Show this book
       new_book: New book
     edit:

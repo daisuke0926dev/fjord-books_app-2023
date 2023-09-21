@@ -13,3 +13,5 @@ ja:
       back_to_books: 本一覧に戻る
       destroy_this_book: この本を破棄する
     new:
+      new_book: 新たに本を追加する
+      back_to_books: 本一覧に戻る

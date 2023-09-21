@@ -8,6 +8,7 @@ en:
       editing_book: Editing book
       show_this_book: Show this book
       back_to_books: Back to books
+      button_text_edit: Edit book
     show:
       edit_this_book: Edit this book
       back_to_books: Back to books
@@ -15,3 +16,7 @@ en:
     new:
       new_book: New book
       back_to_books: Back to books
+      button_text_new: New book
+  layouts:
+    application:
+      booksapp: BooksApp

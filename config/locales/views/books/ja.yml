@@ -8,6 +8,7 @@ ja:
       editing_book: 本の編集
       show_this_book: この本を見る
       back_to_books: 本一覧に戻る
+      button_text_edit: 更新する
     show:
       edit_this_book: この本の編集
       back_to_books: 本一覧に戻る
@@ -15,3 +16,7 @@ ja:
     new:
       new_book: 新たに本を追加する
       back_to_books: 本一覧に戻る
+      button_text_new: 新規登録する
+  layouts:
+    application:
+      booksapp: 書籍アプリ

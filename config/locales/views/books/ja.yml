@@ -9,4 +9,7 @@ ja:
       show_this_book: この本を見る
       back_to_books: 本一覧に戻る
     show:
+      edit_this_book: この本の編集
+      back_to_books: 本一覧に戻る
+      destroy_this_book: この本を破棄する
     new:

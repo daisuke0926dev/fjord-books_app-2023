@@ -8,3 +8,6 @@ ja:
         memo: メモ
         author: 著者
         picture: 画像
+  books:
+    create:
+      notice: 本は正常に作成されました。

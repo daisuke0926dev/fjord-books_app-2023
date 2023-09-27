@@ -32,7 +32,7 @@ ja:
       notice: 本は正常に破棄されました。
   layouts:
     application:
-      booksapp: 書籍アプリ
+      books_app: 書籍アプリ
   helpers:
     submit:
       create: "登録する"

@@ -32,7 +32,7 @@ en:
       notice: Book was successfully destroyed.
   layouts:
     application:
-      booksapp: BooksApp
+      books_app: Books App
   helpers:
     submit:
       create: "create"

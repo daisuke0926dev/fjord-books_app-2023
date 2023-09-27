@@ -17,7 +17,6 @@ en:
       editing_book: Editing book
       show_this_book: Show this book
       back_to_books: Back to books
-      button_text_edit: Edit book
     show:
       edit_this_book: Edit this book
       back_to_books: Back to books
@@ -25,7 +24,6 @@ en:
     new:
       new_book: New book
       back_to_books: Back to books
-      button_text_new: New book
     create:
       notice: Book was successfully created.
     update:
@@ -35,3 +33,7 @@ en:
   layouts:
     application:
       booksapp: BooksApp
+  helpers:
+    submit:
+      create: "create"
+      update: "update"

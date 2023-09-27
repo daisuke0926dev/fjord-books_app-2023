@@ -29,9 +29,6 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-# i18n_generators https://github.com/amatsuda/i18n_generators
-gem 'i18n_generators'
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -74,6 +71,8 @@ group :development do
   gem 'rubocop', '~> 1.45.1', require: false
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
+  # i18n_generators https://github.com/amatsuda/i18n_generators
+  gem 'i18n_generators'
 end
 
 group :test do

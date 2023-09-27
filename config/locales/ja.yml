@@ -1,4 +1,13 @@
 ja:
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        title: タイトル
+        memo: メモ
+        author: 著者
+        picture: 画像
   books:
     index:
       books: 本一覧
@@ -17,6 +26,12 @@ ja:
       new_book: 新たに本を追加する
       back_to_books: 本一覧に戻る
       button_text_new: 新規登録する
+    create:
+      notice: 本は正常に作成されました。
+    update:
+      notice: 本は正常に更新されました。
+    destroy:
+      notice: 本は正常に破棄されました。
   layouts:
     application:
       booksapp: 書籍アプリ

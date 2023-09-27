@@ -1,4 +1,13 @@
 en:
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        title: Title
+        memo: Memo
+        author: Author
+        picture: Picture
   books:
     index:
       books: Books
@@ -17,6 +26,12 @@ en:
       new_book: New book
       back_to_books: Back to books
       button_text_new: New book
+    create:
+      notice: Book was successfully created.
+    update:
+      notice: Book was successfully updated.
+    destroy:
+      notice: Book was successfully destroyed.
   layouts:
     application:
       booksapp: BooksApp

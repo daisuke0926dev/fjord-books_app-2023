@@ -1,0 +1,39 @@
+ja:
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        title: タイトル
+        memo: メモ
+        author: 著者
+        picture: 画像
+  books:
+    index:
+      books: 本一覧
+      show_this_book: この本を見る
+      new_book: 新たに本を追加する
+    edit:
+      editing_book: 本の編集
+      show_this_book: この本を見る
+      back_to_books: 本一覧に戻る
+    show:
+      edit_this_book: この本の編集
+      back_to_books: 本一覧に戻る
+      destroy_this_book: この本を破棄する
+    new:
+      new_book: 新たに本を追加する
+      back_to_books: 本一覧に戻る
+    create:
+      notice: 本は正常に作成されました。
+    update:
+      notice: 本は正常に更新されました。
+    destroy:
+      notice: 本は正常に破棄されました。
+  layouts:
+    application:
+      books_app: 書籍アプリ
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"

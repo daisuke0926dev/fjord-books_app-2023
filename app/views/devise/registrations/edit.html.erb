@@ -26,10 +26,6 @@
   <div class="field">
     <%= f.label :password %> <i>(<%= t('views.common.leave_blank_msg_on_password_form') %>)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>1
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
   </div>
 
   <div class="field">

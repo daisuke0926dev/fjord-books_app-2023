@@ -25,6 +25,8 @@ ja:
         subject: "メールアドレスが変更されました"
       password_change:
         subject: "パスワードが変更されました"
+      password_change_mail:
+        pre_url: "誰かがあなたのパスワード変更を望みました。以下のURLを開いて、パスワードを変更してください。"
     omniauth_callbacks:
       failure: "%{kind}からの認証に失敗しました。理由: \"%{reason}\"。"
       success: "%{kind}アカウントから正常に認証されました。"

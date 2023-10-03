@@ -15,4 +15,6 @@ ja:
         post_code: 郵便番号
         addr: 住所
         biography: 自己紹介
-
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        current_password: 現在のパスワード

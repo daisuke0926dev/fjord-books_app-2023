@@ -188,12 +188,15 @@ ja:
       destroy: "この%{name}を削除"
       new: "%{name}の新規作成"
       back: "%{name}の一覧に戻る"
+      simple_back: "戻る"
       delete_confirm: よろしいですか？
       title_index: "%{name}の一覧"
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
+      leave_blank_msg_on_password_form: 'パスワードを変更しない場合は、空欄のままで登録してください。'
+      we_need_your_password_to_confirm: '変更内容を登録するために、現在のパスワードを入力してください。'
     pagination:
       first: '« 最初'
       last: '最後 »'

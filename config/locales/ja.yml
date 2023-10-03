@@ -193,6 +193,12 @@ ja:
       title_index: "%{name}の一覧"
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+      title_edit_account: "アカウント情報を編集"
+      title_log_in: ログイン
+      titile_log_out: ログアウト
+      title_sign_up: サインアップ
+      title_forgot_your_password: パスワードを忘れた
+      title_change_your_password: パスワードを変更する
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
       leave_blank_msg_on_password_form: 'パスワードを変更しない場合は、空欄のままで登録してください。'

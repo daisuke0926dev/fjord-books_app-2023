@@ -11,21 +11,6 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show; end
 
-  # GET /users/new
-  def new; end
-
-  # GET /users/1/edit
-  def edit; end
-
-  # POST /users or /users.json
-  def create; end
-
-  # PATCH/PUT /users/1 or /users/1.json
-  def update; end
-
-  # DELETE /users/1 or /users/1.json
-  def destroy; end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

@@ -15,16 +15,7 @@ ja:
       unauthenticated: "続行する前にサインインまたはサインアップが必要です。"
       unconfirmed: "続行する前にメールアドレスを確認する必要があります。"
     mailer:
-      confirmation_instructions:
-        subject: "確認の手順"
-      reset_password_instructions:
-        subject: "パスワードリセットの手順"
-      unlock_instructions:
-        subject: "アカウントのロック解除手順"
-      email_changed:
-        subject: "メールアドレスが変更されました"
-      password_change:
-        subject: "パスワードが変更されました"
+      hello: "こんにちは"
       password_change_mail:
         pre_url: "誰かがあなたのパスワード変更を望みました。以下のURLを開いて、パスワードを変更してください。"
     omniauth_callbacks:

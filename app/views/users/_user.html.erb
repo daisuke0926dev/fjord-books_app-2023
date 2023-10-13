@@ -1,6 +1,11 @@
 <div id="<%= dom_id user %>">
 
   <p>
+    <strong><%= User.human_attribute_name(:avatar) %>:</strong>
+    <%= image_tag rails_blob_path(user.avatar) %>
+  </p>
+
+  <p>
     <strong><%= User.human_attribute_name(:email) %>:</strong>
     <%= user.email %>
   </p>

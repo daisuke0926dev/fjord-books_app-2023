@@ -86,4 +86,5 @@ gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
-gem 'mini_magick'
+gem 'image_processing'
+gem "mini_magick"

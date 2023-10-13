@@ -2,7 +2,8 @@
 
   <p>
     <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-    <%= image_tag rails_blob_path(user.avatar) %>
+    <%= image_tag user.avatar.variant(resize_to_fit:[100,100]) %>
+
   </p>
 
   <p>

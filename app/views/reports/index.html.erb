@@ -2,6 +2,7 @@
   <% @reports.each do |report| %>
     <div class="index-item">
       <%= render report %>
+      <%= link_to t('views.common.show', name: Report.model_name.human.downcase), report %>
     </div>
   <% end %>
 </div>

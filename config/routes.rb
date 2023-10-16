@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show)
-  resources :reports, only: %i(index new create)
+  resources :reports, only: %i(index new create show destroy edit update)
 end

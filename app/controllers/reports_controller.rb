@@ -61,10 +61,10 @@ class ReportsController < ApplicationController
   end
 
   def check_owner
-    unless @report.user == current_user
-      respond_to do |format|
-        format.html { redirect_to reports_url, notice: '権限エラー' }
-      end
+    return if @report.user == current_user
+
+    respond_to do |format|
+      format.html { redirect_to reports_url, notice: '権限エラー' }
     end
   end
 end

@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit destroy update]
+  before_action :check_owner, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(:id).page(params[:page])
@@ -17,14 +18,14 @@ class ReportsController < ApplicationController
   def edit; end
 
   def create
-    @report = Report.new(report_params)
+    @report = current_user.reports.build(report_params)
 
     respond_to do |format|
       if @report.save
-        # format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human) }
+        format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human) }
         # format.json { render :show, status: :created, location: @report }
       else
-        # format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         # format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end
@@ -33,10 +34,10 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        # format.html { redi`rect_to book_url(@book), notice: t('controllers.common.notice_update', name: Book.model_name.human) }
-        # format.json { re`nder :show, status: :ok, location: @book }
+        format.html { redirect_to book_url(@book), notice: t('controllers.common.notice_update', name: Book.model_name.human) }
+        # format.json { render :show, status: :ok, location: @book }
       else
-        # format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         # format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -57,5 +58,13 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :body)
+  end
+
+  def check_owner
+    unless @report.user == current_user
+      respond_to do |format|
+        format.html { redirect_to reports_url, notice: '権限エラー' }
+      end
+    end
   end
 end

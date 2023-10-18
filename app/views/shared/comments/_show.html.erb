@@ -1,0 +1,11 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <strong><%= User.human_attribute_name(:email) %>:</strong>
+    <%= User.find(comment.user_id).email %>
+  </p>
+  <p>
+    <strong><%= Comment.human_attribute_name(:content) %>:</strong>
+    <%= comment.content %>
+  </p>
+
+</div>

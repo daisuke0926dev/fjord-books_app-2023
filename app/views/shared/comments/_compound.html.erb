@@ -1,5 +1,5 @@
 <div>
-<p> comment </p>
+<p> <%= t('views.common.title_index', name: Comment.model_name.human) %> </p>
 <% commentable.comments.each do |comment| %>
   <div class="index-item">
     <%= render partial: 'shared/comments/show', locals: { comment: comment } %>

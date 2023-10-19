@@ -1,7 +1,7 @@
 <%= form_with(model: [ commentable, comment ]) do |form| %>
 
   <div>
-    <%= form.label "コメント本文", style: "display: block" %>
+    <%= form.label Comment.human_attribute_name(:content), style: "display: block" %>
     <%= form.text_field :content %>
   </div>
 

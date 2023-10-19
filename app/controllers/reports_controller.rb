@@ -19,31 +19,25 @@ class ReportsController < ApplicationController
   def create
     @report = current_user.reports.build(report_params)
 
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human) }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @report.save
+      redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    respond_to do |format|
-      if @report.update(report_params)
-        format.html { redirect_to book_url(@book), notice: t('controllers.common.notice_update', name: Book.model_name.human) }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-      end
+    if @report.update(report_params)
+      redirect_to book_url(@book), notice: t('controllers.common.notice_update', name: Book.model_name.human)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @report.destroy
 
-    respond_to do |format|
-      format.html { redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human) }
-    end
+    redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   def set_report
@@ -57,8 +51,6 @@ class ReportsController < ApplicationController
   def check_owner
     return if @report.user == current_user
 
-    respond_to do |format|
-      format.html { redirect_to reports_url, notice: '権限エラー' }
-    end
+    redirect_to reports_url, notice: '権限エラー'
   end
 end

@@ -1,7 +1,7 @@
 <div id="<%= dom_id comment %>">
   <p>
-    <strong><%= User.human_attribute_name(:email) %>:</strong>
-    <%= User.find(comment.user_id).email %>
+    <strong><%= User.model_name.human %>:</strong>
+    <%= comment.user.name.present? ? comment.user.name : comment.user.email %>
   </p>
   <p>
     <strong><%= Comment.human_attribute_name(:content) %>:</strong>

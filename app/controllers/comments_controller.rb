@@ -2,6 +2,8 @@
 
 class CommentsController < ApplicationController
   before_action :set_commentable
+  before_action :set_comment, only: [:destroy]
+  before_action :check_owner, only: [:destroy]
 
   def create
     @comment = @commentable.comments.new(comment_params)
@@ -30,7 +32,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def check_owner
+    return if @comment.user == current_user
+
+    respond_to do |format|
+      format.html { redirect_to @commentable, notice: '権限エラー' }
+    end
+  end
+
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end

@@ -23,9 +23,9 @@ class CommentsController < ApplicationController
   private
 
   def set_commentable
-    if request.path.match(/books/)
+    if /books/.match?(request.path)
       @commentable = Book.find(params[:book_id])
-    elsif request.path.match(/reports/)
+    elsif /reports/.match?(request.path)
       @commentable = Report.find(params[:report_id])
     end
   end

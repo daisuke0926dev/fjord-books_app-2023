@@ -9,17 +9,17 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to @commentable, notice: 'Comment was successfully created.'
+      redirect_to_commentable('OK')
     else
       # エラーハンドリングの処理
-      redirect_to @commentable, notice: @comment.errors.full_messages.to_s
+      redirect_to_commentable(@comment.errors.full_messages.to_s)
     end
   end
 
   def destroy
     @comment = @commentable.comments.find(params[:id])
     @comment.destroy
-    redirect_to @commentable, notice: 'Comment was successfully deleted.'
+    redirect_to_commentable('OK')
   end
 
   private
@@ -36,12 +36,16 @@ class CommentsController < ApplicationController
     return if @comment.user == current_user
 
     respond_to do |format|
-      format.html { redirect_to @commentable, notice: '権限エラー' }
+      format.html { redirect_to_commentable('NG') }
     end
   end
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def redirect_to_commentable(message)
+    redirect_to @commentable, notice: message
   end
 
   def set_comment

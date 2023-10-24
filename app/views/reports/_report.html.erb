@@ -20,10 +20,11 @@
   </p>
 
   <p>
-    <strong><%= Mention.human_attribute_name(:mentioned_report) %></strong>
-    <% report.mentioned_reports.pluck(:id).each do |mention_id| %>
-    <%= link_to Report.find(mention_id).title, Report.find(mention_id) %>
+    <strong><%= Mention.human_attribute_name(:mentioned_report) %></strong><br>
+    <% report.mentioned_reports.each do |mentioned_report| %>
+      <%= link_to mentioned_report.title, mentioned_report %><br>
     <% end %>
   </p>
+
 
 </div>

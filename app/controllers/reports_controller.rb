@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[edit update destroy]
+  after_action :update_mentions_from_content, only: %i[create]
 
   def index
     @reports = Report.includes(:user).order(id: :desc).page(params[:page])
@@ -50,5 +51,24 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
+  end
+
+  def update_mentions_from_content
+    mentioned_report_ids = extract_report_ids_from_content
+    current_mentioned_ids = @report.mentioned_reports.pluck(:id)
+
+    ids_to_remove = current_mentioned_ids - mentioned_report_ids
+    ids_to_add = mentioned_report_ids - current_mentioned_ids
+
+    Mention.where(mentioning_report_id: @report.id, mentioned_report_id: ids_to_remove).destroy_all
+    ids_to_add.each do |id|
+      Mention.create(mentioning_report_id: @report.id, mentioned_report_id: id)
+    end
+  end
+
+  def extract_report_ids_from_content
+    total_reports = Report.count
+    regex = %r{http://localhost:3000/reports/([1-#{total_reports}]+)}
+    @report.content.scan(regex).flatten.map(&:to_i)
   end
 end

@@ -51,6 +51,6 @@ class ReportsController < ApplicationController
   def check_owner
     return if @report.user == current_user
 
-    redirect_to reports_url, notice: '権限エラー'
+    redirect_to reports_url
   end
 end

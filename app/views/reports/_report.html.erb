@@ -19,4 +19,11 @@
     <%= l report.created_on %>
   </p>
 
+  <p>
+    <strong><%= Mention.human_attribute_name(:mentioned_report) %></strong><br>
+    <% report.mentioned_reports.each do |mentioned_report| %>
+      <%= link_to mentioned_report.title, mentioned_report %><br>
+    <% end %>
+  </p>
+
 </div>

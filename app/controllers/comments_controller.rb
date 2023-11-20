@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to_commentable('OK')
+      redirect_to_commentable(t('controllers.common.notice_create', name: Comment.model_name.human))
     else
       # エラーハンドリングの処理
       redirect_to_commentable(@comment.errors.full_messages.to_s)
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = @commentable.comments.find(params[:id])
     @comment.destroy
-    redirect_to_commentable('OK')
+    redirect_to_commentable(t('controllers.common.notice_destroy', name: Comment.model_name.human))
   end
 
   private
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     return if @comment.user == current_user
 
     respond_to do |format|
-      format.html { redirect_to_commentable('NG') }
+      format.html { redirect_to_commentable('') }
     end
   end
 

@@ -85,4 +85,5 @@ end
 gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
+gem 'image_processing'
 gem 'kaminari'

@@ -1,0 +1,11 @@
+<%= form_with(model: [ commentable, comment ]) do |form| %>
+
+  <div>
+    <%= form.label Comment.human_attribute_name(:content), style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

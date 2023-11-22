@@ -1,0 +1,12 @@
+<div id="reports" class="index-items">
+  <% @reports.each do |report| %>
+    <div class="index-item">
+      <%= render report %>
+      <%= link_to t('views.common.show', name: Report.model_name.human.downcase), report %>
+    </div>
+  <% end %>
+</div>
+
+<nav class="page-nav">
+    <%= link_to t('views.common.new', name: Report.model_name.human.downcase), new_report_path %>
+</nav>

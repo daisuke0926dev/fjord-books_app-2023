@@ -1,0 +1,16 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <strong><%= User.model_name.human %>:</strong>
+    <%= comment.user.name.present? ? comment.user.name : comment.user.email %>
+  </p>
+  <p>
+    <strong><%= Comment.human_attribute_name(:content) %>:</strong>
+    <%= comment.content %>
+  </p>
+
+  <% if comment.user == current_user %>
+  <nav class="page-nav">
+    <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase), [comment.commentable, comment], method: :delete %>
+  </nav>
+  <% end %>
+</div>
